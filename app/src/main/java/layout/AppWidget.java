@@ -31,27 +31,12 @@ public class AppWidget extends AppWidgetProvider {
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
         views.setOnClickPendingIntent(R.id.widgetLayout, pendingIntent);
+
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
-        // if(intent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_UPDATE)) {
-      /*  SharedPreferences preferences =
-                context.getSharedPreferences(Extras.PREF, Context.MODE_PRIVATE);
-        String time = preferences.getString(Extras.PREF_KEY_TIME, null);
-
-        if(intent.getExtras()!=null){
-        int id = intent.getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID);
-
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.app_widget);
-        views.setTextViewText(R.id.appwidget_text, time);
-        if (intent.getExtras() != null) {
-            updateAppWidget(context, AppWidgetManager.getInstance(context),
-                    id);
-        }*/
-      //  }
-        // }
     }
 
     @Override
@@ -67,7 +52,6 @@ public class AppWidget extends AppWidgetProvider {
         // When the user deletes the widget, delete the preference associated with it.
         for (int appWidgetId : appWidgetIds) {
             App.getTimeRepository().reset();
-            //AppWidgetConfigureActivity.deleteTitlePref(context, appWidgetId);
         }
     }
 
