@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RSSReader</string>
+    <string name="rss_chanel_1">Live News</string>
+    <string name="rss_chanel_2">Analytics</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+</resources>
