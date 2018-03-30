@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private class NewsFeedPagerAdapter extends FragmentPagerAdapter {
+
         public NewsFeedPagerAdapter(FragmentManager fm) {
             super(fm);
         }

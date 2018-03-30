@@ -3,9 +3,9 @@ package com.aliaksandramolchan.rssreader.handler;
 
 import com.aliaksandramolchan.rssreader.Extras;
 import com.aliaksandramolchan.rssreader.model.RSSNewsFeed;
-import com.aliaksandramolchan.rssreader.repository.NewsRepository;
 import com.aliaksandramolchan.rssreader.model.RSSNewsItem;
 import com.aliaksandramolchan.rssreader.network.App;
+import com.aliaksandramolchan.rssreader.repository.NewsRepository;
 
 import java.util.List;
 
@@ -61,8 +61,8 @@ public class NewsHandler {
                                 }
                             },
                             Throwable::printStackTrace);
+            queryTime = App.getTimeRepository().getCurrentTime();
         }
-        queryTime = App.getTimeRepository().getCurrentTime();
     }
 
     public void reset() {

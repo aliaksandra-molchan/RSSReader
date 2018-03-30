@@ -14,10 +14,10 @@ import android.widget.GridView;
 
 import com.aliaksandramolchan.rssreader.Extras;
 import com.aliaksandramolchan.rssreader.NewsContract;
-import com.aliaksandramolchan.rssreader.network.App;
-import com.aliaksandramolchan.rssreader.presenter.NewsPresenter;
 import com.aliaksandramolchan.rssreader.R;
 import com.aliaksandramolchan.rssreader.model.RSSNewsItem;
+import com.aliaksandramolchan.rssreader.network.App;
+import com.aliaksandramolchan.rssreader.presenter.NewsPresenter;
 
 import java.util.List;
 
@@ -66,7 +66,7 @@ public class NewsFragment extends Fragment implements NewsContract.NewsView {
                 .getActivity()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        return activeNetwork.isConnected();
+        return activeNetwork != null && activeNetwork.isConnected();
     }
 
 
